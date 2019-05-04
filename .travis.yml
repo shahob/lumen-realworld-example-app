@@ -6,8 +6,9 @@ php:
 services:
   - mongodb
 
-before_install: 
+before_install:
   - echo "extension = mongodb.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
+  - pecl install -f mongodb-1.5.3
 
 before_script:
   - cp .env.travis .env
